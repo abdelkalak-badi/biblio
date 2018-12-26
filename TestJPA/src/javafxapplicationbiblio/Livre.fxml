@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="490.0" prefWidth="900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplicationbiblio.LivreController">
+    <stylesheets>
+        <URL value="@interface_biblio.css" />
+    </stylesheets>
+   <children>
+      <Pane prefHeight="490.0" prefWidth="900.0">
+         <children>
+            <Pane layoutX="200.0" prefHeight="490.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="modifier_btn" layoutX="58.0" layoutY="310.0" mnemonicParsing="false" onAction="#btnModifierLivre" text="Modifier" />
+                  <TextField fx:id="txtTitre" layoutY="103.0" promptText="Titre du Livre" style="-fx-background-color: #2A2E37; -fx-border-color: #B2B2B2;" styleClass="text-field" />
+                  <TextField fx:id="txtAuteur" layoutY="170.0" promptText="Auteur du Livre" style="-fx-background-color: #2A2E37; -fx-border-color: #B2B2B2;" styleClass="text-field" />
+                  <DatePicker fx:id="DateEdition" layoutY="234.0" prefHeight="37.0" prefWidth="200.0" promptText="Date Edition" styleClass="Date-picker" stylesheets="@interface_biblio.css" />
+                  <Button layoutX="60.0" layoutY="365.0" mnemonicParsing="false" onAction="#annuler_Livre" text="Annuler" />
+                  <Button fx:id="supprimer_btn" layoutX="51.0" layoutY="310.0" mnemonicParsing="false" onAction="#btnSupprimerLivre" text="Supprimer" />
+                  <Button fx:id="ajouter_btn" layoutX="50.0" layoutY="310.0" mnemonicParsing="false" onAction="#btnAjouterLivre" text="Enregistrer" />
+                  <TextField fx:id="txtId" layoutY="38.0" promptText="Code du Livre" style="-fx-background-color: #2A2E37; -fx-border-color: #B2B2B2;" styleClass="text-field" />
+               </children>
+            </Pane>
+            <VBox fx:id="btnlivre" layoutX="10.0" prefHeight="467.0" prefWidth="142.0">
+               <children>
+                  <GridPane prefHeight="491.0" prefWidth="99.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="175.0" minHeight="10.0" prefHeight="162.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="203.0" minHeight="10.0" prefHeight="171.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="166.0" minHeight="10.0" prefHeight="154.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Button fx:id="btn_ajouter_livre" alignment="CENTER" graphicTextGap="10.0" mnemonicParsing="false" onAction="#onclick_ajouter" prefHeight="82.0" prefWidth="143.0" text="Ajouter Livre" />
+                        <Button fx:id="btn_modifier_livre" alignment="CENTER" graphicTextGap="10.0" layoutX="10.0" mnemonicParsing="false" onAction="#onclick_modifier" prefHeight="82.0" prefWidth="143.0" text="Modifier Livre" GridPane.rowIndex="1" />
+                        <Button fx:id="btn_supprimer_livre" alignment="CENTER" graphicTextGap="10.0" mnemonicParsing="false" onAction="#onclick_supprimer" prefHeight="82.0" prefWidth="143.0" text="Supprimer Livre" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+            <TableView fx:id="tabLivre" layoutX="436.0" layoutY="21.0" prefHeight="449.0" prefWidth="450.0">
+               <columns>
+                  <TableColumn fx:id="codelLivre" prefWidth="50.0" text="Code" />
+                  <TableColumn fx:id="AuteurLivre" prefWidth="100.0" text="Auteur" />
+                  <TableColumn fx:id="TitreLivre" minWidth="0.0" prefWidth="200.0" text="Titre" />
+                  <TableColumn fx:id="DateLivre" prefWidth="100.0" text="Date Edition" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
